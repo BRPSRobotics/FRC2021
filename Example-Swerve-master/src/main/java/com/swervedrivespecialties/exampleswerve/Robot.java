@@ -84,12 +84,10 @@ public class Robot extends TimedRobot {
     @Override
     public void robotPeriodic() {
         Scheduler.getInstance().run();
-        SmartDashboard.putNumber("Left Analog - Axis0", oi.getPivotJoystick().getRawAxis(0));
-        SmartDashboard.putNumber("Left Analog - Axis1", oi.getPivotJoystick().getRawAxis(1));
-        SmartDashboard.putNumber("Left Analog - Axis2", oi.getPivotJoystick().getRawAxis(2));
-        SmartDashboard.putNumber("Right Analog - Axis0", oi.getPrimaryJoystick().getRawAxis(0));
-        SmartDashboard.putNumber("Right Analog - Axis1", oi.getPrimaryJoystick().getRawAxis(1));
-        SmartDashboard.putNumber("Right Analog - Axis2", oi.getPrimaryJoystick().getRawAxis(2));
+        SmartDashboard.putNumber("Left Analog - X-Axis", oi.getSecondaryX());
+        SmartDashboard.putNumber("Left Analog - Y-Axis", oi.getSecondaryY());
+        SmartDashboard.putNumber("Right Analog - X-Axis", oi.getPrimaryX());
+        SmartDashboard.putNumber("Right Analog - Y-Axis", oi.getPrimaryY());
     }
 
     @Override
