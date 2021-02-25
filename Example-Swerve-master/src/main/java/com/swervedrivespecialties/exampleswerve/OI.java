@@ -14,7 +14,7 @@ import org.frcteam5162.commands.LiftCommand;
 import org.frcteam5162.commands.LaunchCommand;
 
 public class OI {
-    private final boolean use_controller = true;
+    private final boolean use_controller = false;
 
     /*
        Add your joysticks and buttons here
