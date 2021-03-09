@@ -3,17 +3,20 @@ package org.frcteam5162.commands;
 import com.swervedrivespecialties.exampleswerve.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
-import org.frcteam5162.subsystems.LiftSubsystem;
+import org.frcteam5162.subsystems.IntakeSubsystem;
 
-public class LiftCommand extends Command {
-    public LiftCommand()
+public class IntakeCommand extends Command {
+    private boolean is_forward;
+
+    public IntakeCommand(boolean forward)
     {
-        requires(LiftSubsystem.getInstance());
+        requires(IntakeSubsystem.getInstance());
+        this.is_forward = forward;
     }
 
     protected void initialize()
     {
-        Robot.getSubLift().LiftOn(); // Motor power for ON is defined in LiftSubsystem.java
+        Robot.getSubIntake().IntakeOn(this.is_forward); // Motor power for ON is defined in IntakeSubsystem.java
     }
 
     protected void execute()
@@ -23,7 +26,7 @@ public class LiftCommand extends Command {
 
     protected void end()
     {
-        Robot.getSubLift().LiftOff();
+        Robot.getSubIntake().IntakeOff();
     }
 
     protected void interrupted()

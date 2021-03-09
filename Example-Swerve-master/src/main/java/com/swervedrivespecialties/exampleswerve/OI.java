@@ -27,7 +27,8 @@ public class OI {
 
     /* 5162 */
 
-    private JoystickButton loadfillButton;
+    private JoystickButton intakeButton;
+    private JoystickButton intakeReverseButton;
     private JoystickButton feederButton;
     private JoystickButton launchButton;
     private JoystickButton liftButton;
@@ -44,7 +45,7 @@ public class OI {
         if (use_controller)
         {
             primaryController = new XboxController(0);
-            loadfillButton = new JoystickButton(primaryController, XboxController.Button.kA.value);
+            intakeButton = new JoystickButton(primaryController, XboxController.Button.kA.value);
             feederButton = new JoystickButton(primaryController, XboxController.Button.kB.value);
             launchButton = new JoystickButton(primaryController, XboxController.Button.kX.value);
             liftButton = new JoystickButton(primaryController, XboxController.Button.kY.value);
@@ -56,7 +57,10 @@ public class OI {
         {
             secondaryJoystick = new Joystick(0);
             primaryJoystick = new Joystick(1);
-            loadfillButton = new JoystickButton(primaryJoystick, 1);
+            
+            intakeButton = new JoystickButton(primaryJoystick, 1);
+            intakeReverseButton = new JoystickButton(secondaryJoystick, 1);
+
             feederButton = new JoystickButton(primaryJoystick, 2);
             launchButton = new JoystickButton(primaryJoystick, 3);
             liftButton = new JoystickButton(primaryJoystick, 4);
@@ -72,7 +76,10 @@ public class OI {
         feederButton.whileHeld(new FeederCommand());
         launchButton.whileHeld(new LaunchCommand());
         liftButton.whileHeld(new LiftCommand());
-        loadfillButton.whileHeld(new LoadFillCommand());
+        
+        intakeButton.whileHeld(new LoadFillCommand(true));
+        intakeReverseButton.whileHeld(new LoadFillCommand(false));
+
         colorWheelArmButton.whileHeld(new ColorWheelArmCommand());
         colorWheelTurnButton.whileHeld(new ColorWheelTurnCommand());
     }
