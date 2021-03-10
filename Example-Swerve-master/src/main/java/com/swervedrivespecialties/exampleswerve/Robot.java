@@ -10,8 +10,7 @@ import org.frcteam5162.subsystems.color_wheel.ColorWheelTurnSubsystem;
 import org.frcteam5162.subsystems.color_wheel.ColorWheelArmSubsystem;
 import org.frcteam5162.subsystems.FeederSubsystem;
 import org.frcteam5162.subsystems.LaunchSubsystem;
-import org.frcteam5162.subsystems.LiftSubsystem;
-import org.frcteam5162.subsystems.LoadFillSubsystem;
+import org.frcteam5162.subsystems.IntakeSubsystem;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.Timer;
@@ -25,10 +24,9 @@ public class Robot extends TimedRobot {
 
     private static DrivetrainSubsystem drivetrain;
 
-    private static LoadFillSubsystem subLoadFill;
+    private static IntakeSubsystem subIntake;
     private static FeederSubsystem subFeeder;
     private static LaunchSubsystem subLaunch;
-    private static LiftSubsystem subLift;
     private static ColorWheelArmSubsystem subColorWheelArm;
     private static ColorWheelTurnSubsystem subColorWheelTurn;
 
@@ -39,9 +37,9 @@ public class Robot extends TimedRobot {
         return oi;
     }
 
-    public static LoadFillSubsystem getSubLoadFill()
+    public static IntakeSubsystem getSubIntake()
     {
-        return subLoadFill;
+        return subIntake;
     }
 
     public static FeederSubsystem getSubFeeder()
@@ -52,11 +50,6 @@ public class Robot extends TimedRobot {
     public static LaunchSubsystem getSubLaunch()
     {
         return subLaunch;
-    }
-
-    public static LiftSubsystem getSubLift()
-    {
-        return subLift;
     }
 
     public static ColorWheelArmSubsystem getSubColorWheelArm()
@@ -72,9 +65,8 @@ public class Robot extends TimedRobot {
     @Override
     public void robotInit() {
         oi = new OI();
-        subLift = LiftSubsystem.getInstance();
         subLaunch = LaunchSubsystem.getInstance();
-        subLoadFill = LoadFillSubsystem.getInstance();
+        subIntake = IntakeSubsystem.getInstance();
         subFeeder = FeederSubsystem.getInstance();
         drivetrain = DrivetrainSubsystem.getInstance();
 

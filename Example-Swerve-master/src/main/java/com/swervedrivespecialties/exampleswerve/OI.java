@@ -7,14 +7,13 @@ import edu.wpi.first.wpilibj.command.InstantCommand;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import org.frcteam5162.commands.FeederCommand;
-import org.frcteam5162.commands.LoadFillCommand;
+import org.frcteam5162.commands.IntakeCommand;
 import org.frcteam5162.commands.color_wheel.ColorWheelArmCommand;
 import org.frcteam5162.commands.color_wheel.ColorWheelTurnCommand;
-import org.frcteam5162.commands.LiftCommand;
 import org.frcteam5162.commands.LaunchCommand;
 
 public class OI {
-    private final boolean use_controller = true;
+    private final boolean use_controller = false;
 
     /*
        Add your joysticks and buttons here
@@ -58,11 +57,11 @@ public class OI {
             secondaryJoystick = new Joystick(0);
             primaryJoystick = new Joystick(1);
             
-            intakeButton = new JoystickButton(primaryJoystick, 1);
-            intakeReverseButton = new JoystickButton(secondaryJoystick, 1);
+            intakeButton = new JoystickButton(primaryJoystick, 2);
+            intakeReverseButton = new JoystickButton(secondaryJoystick, 2);
 
-            feederButton = new JoystickButton(primaryJoystick, 2);
-            launchButton = new JoystickButton(primaryJoystick, 3);
+            feederButton = new JoystickButton(secondaryJoystick, 1);
+            launchButton = new JoystickButton(primaryJoystick, 1);
             liftButton = new JoystickButton(primaryJoystick, 4);
             colorWheelArmButton = new JoystickButton(primaryJoystick, 5);
             colorWheelTurnButton = new JoystickButton(secondaryJoystick, 6);
@@ -75,10 +74,9 @@ public class OI {
 
         feederButton.whileHeld(new FeederCommand());
         launchButton.whileHeld(new LaunchCommand());
-        liftButton.whileHeld(new LiftCommand());
         
-        intakeButton.whileHeld(new LoadFillCommand(true));
-        intakeReverseButton.whileHeld(new LoadFillCommand(false));
+        intakeButton.whileHeld(new IntakeCommand(true));
+        intakeReverseButton.whileHeld(new IntakeCommand(false));
 
         colorWheelArmButton.whileHeld(new ColorWheelArmCommand());
         colorWheelTurnButton.whileHeld(new ColorWheelTurnCommand());
