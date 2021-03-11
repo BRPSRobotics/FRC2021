@@ -10,7 +10,7 @@ import org.frcteam5162.config.RobotConfig;
 
 public class LaunchSubsystem extends Subsystem {
     private static LaunchSubsystem instance;
-    private static double dblOnPower = 0.25;
+    private static double dblOnPower = -0.25;
     private static TalonSRX mtrLauncherRear = new TalonSRX(RobotConfig.LAUNCH_RE_CAN_ID);
     private static TalonSRX mtrLauncherFront = new TalonSRX(RobotConfig.LAUNCH_FR_CAN_ID);
 
