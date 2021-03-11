@@ -55,8 +55,8 @@ public class OI {
             secondaryJoystick = new Joystick(0);
             primaryJoystick = new Joystick(1);
             
-            intakeButton = new JoystickButton(primaryJoystick, 1);
-            intakeReverseButton = new JoystickButton(secondaryJoystick, 1);
+            intakeButton = new JoystickButton(secondaryJoystick, 1);
+            intakeReverseButton = new JoystickButton(primaryJoystick, 1);
 
             feederButton = new JoystickButton(primaryJoystick, 2);
             launchButton = new JoystickButton(primaryJoystick, 3);
