@@ -19,7 +19,7 @@ public class DriveCommand extends Command {
         // Square the forward stick
         forward = Math.copySign(Math.pow(forward, 2.0), forward);
 
-        double strafe = -Robot.getOi().getPrimaryY();
+        double strafe = -Robot.getOi().getPrimaryX();
         strafe = Utilities.deadband(strafe);
         // Square the strafe stick
         strafe = Math.copySign(Math.pow(strafe, 2.0), strafe);
