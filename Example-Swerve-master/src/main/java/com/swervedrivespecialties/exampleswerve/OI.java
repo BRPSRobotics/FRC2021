@@ -30,7 +30,6 @@ public class OI {
     private JoystickButton intakeReverseButton;
     private JoystickButton feederButton;
     private JoystickButton launchButton;
-    private JoystickButton liftButton;
     private JoystickButton colorWheelArmButton;
     private JoystickButton colorWheelTurnButton;
     private JoystickButton gyroResetButton;
@@ -47,7 +46,6 @@ public class OI {
             intakeButton = new JoystickButton(primaryController, XboxController.Button.kA.value);
             feederButton = new JoystickButton(primaryController, XboxController.Button.kB.value);
             launchButton = new JoystickButton(primaryController, XboxController.Button.kX.value);
-            liftButton = new JoystickButton(primaryController, XboxController.Button.kY.value);
             colorWheelArmButton = new JoystickButton(primaryController, XboxController.Button.kBumperLeft.value);
             colorWheelTurnButton = new JoystickButton(primaryController, XboxController.Button.kBumperRight.value);
             gyroResetButton = new JoystickButton(primaryController, XboxController.Button.kBack.value);
@@ -57,12 +55,11 @@ public class OI {
             secondaryJoystick = new Joystick(0);
             primaryJoystick = new Joystick(1);
             
-            intakeButton = new JoystickButton(primaryJoystick, 2);
-            intakeReverseButton = new JoystickButton(secondaryJoystick, 2);
+            intakeButton = new JoystickButton(primaryJoystick, 1);
+            intakeReverseButton = new JoystickButton(secondaryJoystick, 1);
 
-            feederButton = new JoystickButton(secondaryJoystick, 1);
-            launchButton = new JoystickButton(primaryJoystick, 1);
-            liftButton = new JoystickButton(primaryJoystick, 4);
+            feederButton = new JoystickButton(primaryJoystick, 2);
+            launchButton = new JoystickButton(primaryJoystick, 3);
             colorWheelArmButton = new JoystickButton(primaryJoystick, 5);
             colorWheelTurnButton = new JoystickButton(secondaryJoystick, 6);
             gyroResetButton = new JoystickButton(primaryJoystick, 7);

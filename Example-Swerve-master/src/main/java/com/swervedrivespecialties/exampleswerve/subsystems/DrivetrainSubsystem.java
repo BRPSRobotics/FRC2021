@@ -21,8 +21,8 @@ import org.frcteam2910.common.robot.drivers.Mk2SwerveModuleBuilder;
 import org.frcteam2910.common.robot.drivers.NavX;
 
 public class DrivetrainSubsystem extends Subsystem {
-    private static final double TRACKWIDTH = 18.5; //21.5
-    private static final double WHEELBASE = 23.5; //26.5
+    private static final double TRACKWIDTH = 21.5; //18.5; //21.5
+    private static final double WHEELBASE = 26.5; //23.5; //26.5
 
     private static final double FRONT_LEFT_ANGLE_OFFSET = -Math.toRadians(280);
     private static final double FRONT_RIGHT_ANGLE_OFFSET = -Math.toRadians(-50);
