@@ -9,7 +9,7 @@ import org.frcteam5162.config.RobotConfig;
 
 public class FeederSubsystem extends Subsystem {
     private static FeederSubsystem instance;
-    private static double dblOnPower = -0.25;
+    private static double dblOnPower = -0.75;
     private static TalonSRX mtrFeeder = new TalonSRX(RobotConfig.FEEDER_CAN_ID);
 
     public FeederSubsystem() {

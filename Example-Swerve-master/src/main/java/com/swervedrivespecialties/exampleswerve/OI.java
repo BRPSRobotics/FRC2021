@@ -55,11 +55,11 @@ public class OI {
             secondaryJoystick = new Joystick(0);
             primaryJoystick = new Joystick(1);
             
-            intakeButton = new JoystickButton(secondaryJoystick, 1);
-            intakeReverseButton = new JoystickButton(primaryJoystick, 1);
+            intakeButton = new JoystickButton(primaryJoystick, 2);
+            intakeReverseButton = new JoystickButton(secondaryJoystick, 2);
 
-            feederButton = new JoystickButton(primaryJoystick, 2);
-            launchButton = new JoystickButton(primaryJoystick, 3);
+            feederButton = new JoystickButton(secondaryJoystick, 1);
+            launchButton = new JoystickButton(primaryJoystick, 1);
             colorWheelArmButton = new JoystickButton(primaryJoystick, 5);
             colorWheelTurnButton = new JoystickButton(secondaryJoystick, 6);
             gyroResetButton = new JoystickButton(primaryJoystick, 7);

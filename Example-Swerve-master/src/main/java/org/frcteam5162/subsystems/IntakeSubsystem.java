@@ -10,7 +10,7 @@ import org.frcteam5162.config.RobotConfig;
 
 public class IntakeSubsystem extends Subsystem {
     private static IntakeSubsystem instance;
-    private static double dblOnPower = 1;
+    private static double dblOnPower = 0.6;
     private static TalonSRX mtrIntake = new TalonSRX(RobotConfig.LOAD_CAN_ID);
 
     public IntakeSubsystem() {
