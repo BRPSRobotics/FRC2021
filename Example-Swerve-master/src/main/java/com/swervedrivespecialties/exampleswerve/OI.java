@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.command.InstantCommand;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import org.frcteam5162.commands.FeederCommand;
+import org.frcteam5162.commands.FeederShooterCommand;
 import org.frcteam5162.commands.IntakeCommand;
 import org.frcteam5162.commands.color_wheel.ColorWheelArmCommand;
 import org.frcteam5162.commands.color_wheel.ColorWheelTurnCommand;
@@ -56,9 +57,9 @@ public class OI {
             primaryJoystick = new Joystick(1);
             
             intakeButton = new JoystickButton(primaryJoystick, 2);
-            intakeReverseButton = new JoystickButton(secondaryJoystick, 2);
+            intakeReverseButton = new JoystickButton(secondaryJoystick, 1);
 
-            feederButton = new JoystickButton(secondaryJoystick, 1);
+            feederButton = new JoystickButton(secondaryJoystick, 2);
             launchButton = new JoystickButton(primaryJoystick, 1);
             colorWheelArmButton = new JoystickButton(primaryJoystick, 5);
             colorWheelTurnButton = new JoystickButton(secondaryJoystick, 6);
@@ -70,7 +71,7 @@ public class OI {
         );
 
         feederButton.whileHeld(new FeederCommand());
-        launchButton.whileHeld(new LaunchCommand());
+        launchButton.whileHeld(new FeederShooterCommand());
         
         intakeButton.whileHeld(new IntakeCommand(true));
         intakeReverseButton.whileHeld(new IntakeCommand(false));
