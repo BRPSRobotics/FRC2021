@@ -8,6 +8,8 @@ import org.frcteam2910.common.robot.Utilities;
 
 public class DriveCommand extends Command {
 
+    private Command driveTypeCommand = new TankDriveCommand();
+
     public DriveCommand() {
         requires(DrivetrainSubsystem.getInstance());
     }
