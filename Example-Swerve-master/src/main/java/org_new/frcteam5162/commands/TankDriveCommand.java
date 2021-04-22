@@ -1,4 +1,4 @@
-package org.frcteam5162.commands;
+package org_new.frcteam5162.commands;
 
 import com.swervedrivespecialties.exampleswerve.Robot;
 
@@ -13,15 +13,15 @@ public class TankDriveCommand extends Command {
     }
 
     @Override
-    protected void execute() {
-        final double right = Robot.getOi().getPrimaryY();
-        final double left = Robot.getOi().getSecondaryY();
+    public void execute() {
+        double right = Robot.getOi().getPrimaryY();
+        double left = Robot.getOi().getSecondaryY();
 
         TankDriveSubsystem.getInstance().drive(right, left);
     }
 
     @Override
-    protected boolean isFinished() {
+    public boolean isFinished() {
         return false;
     }
 }

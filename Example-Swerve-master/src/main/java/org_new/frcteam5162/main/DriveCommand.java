@@ -1,11 +1,12 @@
-package org.frcteam5162.main;
+package org_new.frcteam5162.main;
 
+import org_new.frcteam5162.commands.TankDriveCommand;
 import edu.wpi.first.wpilibj.command.Command;
 
 
 public class DriveCommand extends Command {
 
-    private Command driveTypeCommand;
+    private TankDriveCommand driveTypeCommand;
 
     public DriveCommand() {
         driveTypeCommand = new TankDriveCommand();

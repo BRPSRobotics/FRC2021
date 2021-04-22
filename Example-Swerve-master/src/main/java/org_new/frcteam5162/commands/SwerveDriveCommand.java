@@ -1,4 +1,4 @@
-package com.swervedrivespecialties.exampleswerve.commands;
+package org_new.frcteam5162.commands;
 
 import com.swervedrivespecialties.exampleswerve.Robot;
 import com.swervedrivespecialties.exampleswerve.subsystems.DrivetrainSubsystem;
@@ -6,9 +6,9 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.geometry.Translation2d;
 import org.frcteam2910.common.robot.Utilities;
 
-public class DriveCommand extends Command {
+public class SwerveDriveCommand extends Command {
 
-    public DriveCommand() {
+    public SwerveDriveCommand() {
         requires(DrivetrainSubsystem.getInstance());
     }
 

@@ -1,4 +1,4 @@
-package com.swervedrivespecialties.exampleswerve.subsystems;
+package org_new.frcteam5162.subsystems;
 
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel;
@@ -20,7 +20,7 @@ import org.frcteam2910.common.math.Vector2;
 import org.frcteam2910.common.robot.drivers.Mk2SwerveModuleBuilder;
 import org.frcteam2910.common.robot.drivers.NavX;
 
-public class DrivetrainSubsystem extends Subsystem {
+public class SwerveDriveSubsystem extends Subsystem {
         
         private static final double TRACKWIDTH = 21.5; //18.5; //21.5
         private static final double WHEELBASE = 26.5; //23.5; //26.5
@@ -30,7 +30,7 @@ public class DrivetrainSubsystem extends Subsystem {
         private static final double BACK_LEFT_ANGLE_OFFSET = -Math.toRadians(130);
         private static final double BACK_RIGHT_ANGLE_OFFSET = -Math.toRadians(-10);
 
-        private static DrivetrainSubsystem instance;
+        private static SwerveDriveSubsystem instance;
 
         private final SwerveModule frontLeftModule = new Mk2SwerveModuleBuilder(
                 new Vector2(TRACKWIDTH / 2.0, WHEELBASE / 2.0))
@@ -79,7 +79,7 @@ public class DrivetrainSubsystem extends Subsystem {
 
         private final Gyroscope gyroscope = new NavX(SPI.Port.kMXP);
 
-        public DrivetrainSubsystem() {
+        public SwerveDriveSubsystem() {
 
                 gyroscope.calibrate();
                 gyroscope.setInverted(true); // You might not need to invert the gyro
@@ -91,9 +91,9 @@ public class DrivetrainSubsystem extends Subsystem {
         
         }
 
-        public static DrivetrainSubsystem getInstance() {
+        public static SwerveDriveSubsystem getInstance() {
                 if (instance == null) {
-                instance = new DrivetrainSubsystem();
+                instance = new SwerveDriveSubsystem();
                 }
 
                 return instance;
